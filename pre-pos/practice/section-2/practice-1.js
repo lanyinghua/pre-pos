@@ -1,5 +1,19 @@
 'use strict';
 
 function countSameElements(collection) {
-  return '实现练习要求，并改写该行代码。';
+  var theTotalAmountOfSameFacter=[];
+  var theAmountOfSameFacter={};
+  theAmountOfSameFacter.key='';
+  // theAmountOfSameFacter.count=0;
+  for (var i=0;i<collection.length;i++){
+    if (theAmountOfSameFacter.key!=collection[i]){
+      var theAmountOfSameFacter ={};
+      theAmountOfSameFacter.key=collection[i];
+      theAmountOfSameFacter.count=1;
+      theTotalAmountOfSameFacter.push(theAmountOfSameFacter)
+    }else if (theAmountOfSameFacter.key==collection[i]){
+      theAmountOfSameFacter.count++;
+    }
+  }
+  return theTotalAmountOfSameFacter;
 }
